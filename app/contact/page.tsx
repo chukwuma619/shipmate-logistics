@@ -58,10 +58,7 @@ export default function ContactPage() {
         </div>
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6">
-              <MessageSquare className="h-3 w-3 mr-1" />
-              Get In Touch
-            </Badge>
+    
             <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Let&apos;s Talk
               <span className="block text-primary-foreground/90">About Your Needs</span>
