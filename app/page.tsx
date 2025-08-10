@@ -352,7 +352,7 @@ export default function HomePage() {
             <Card className="border-0 bg-background/50 overflow-hidden">
               <div className="relative h-48 overflow-hidden">
                 <Image
-                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=400&fit=crop"
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
                   alt="Sarah Johnson - Operations Manager"
                   fill
                   className="object-cover"
