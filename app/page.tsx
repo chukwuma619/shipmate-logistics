@@ -57,7 +57,7 @@ export default function HomePage() {
                   About
                 </Link>
                 <Link
-                  href="#contact"
+                  href="/contact"
                   className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   Contact
