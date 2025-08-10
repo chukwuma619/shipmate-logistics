@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -64,14 +65,27 @@ export default function HomePage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary via-primary/90 to-primary/80 overflow-hidden">
+      <section className="relative overflow-hidden">
+        {/* Background Image */}
+        <div className="absolute inset-0">
+          <Image
+            src="/image.png"
+            alt="Global logistics hub with shipping containers, trucks, and cargo ships"
+            fill
+            className="object-cover object-center"
+            priority
+            quality={90}
+          />
+          {/* Overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/80 to-primary/70" />
+        </div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
           <div className="text-center">
-            <Badge variant="secondary" className="mb-6">
-              <Zap className="h-3 w-3 mr-1" />
-              Trusted by 10,000+ businesses worldwide
-            </Badge>
+                         <Badge variant="secondary" className="mb-6">
+               <Zap className="h-3 w-3 mr-1" />
+               Professional Logistics Platform
+             </Badge>
             <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Global Logistics
               <span className="block text-primary-foreground/90">Made Simple</span>
@@ -136,11 +150,17 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=400&fit=crop"
+                  alt="Modern warehouse with organized packages"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                  <Package className="h-6 w-6 text-primary" />
-                </div>
                 <CardTitle>Smart Package Management</CardTitle>
                 <CardDescription>
                   Organize and track all your shipments in one intuitive dashboard
@@ -148,11 +168,17 @@ export default function HomePage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
+                  alt="Real-time tracking dashboard"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center group-hover:bg-green-200 dark:group-hover:bg-green-900/30 transition-colors">
-                  <Truck className="h-6 w-6 text-green-600 dark:text-green-400" />
-                </div>
                 <CardTitle>Real-Time Tracking</CardTitle>
                 <CardDescription>
                   Get instant updates on your shipment&apos;s location and status
@@ -160,11 +186,17 @@ export default function HomePage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop"
+                  alt="Global shipping network"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-purple-100 dark:bg-purple-900/20 rounded-lg flex items-center justify-center group-hover:bg-purple-200 dark:group-hover:bg-purple-900/30 transition-colors">
-                  <Globe className="h-6 w-6 text-purple-600 dark:text-purple-400" />
-                </div>
                 <CardTitle>Global Coverage</CardTitle>
                 <CardDescription>
                   Ship and track packages to and from anywhere in the world
@@ -172,11 +204,17 @@ export default function HomePage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop"
+                  alt="Secure logistics operations"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center group-hover:bg-blue-200 dark:group-hover:bg-blue-900/30 transition-colors">
-                  <Shield className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                </div>
                 <CardTitle>Secure & Reliable</CardTitle>
                 <CardDescription>
                   Enterprise-grade security with 99.9% uptime guarantee
@@ -184,11 +222,17 @@ export default function HomePage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop"
+                  alt="24/7 customer support team"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/20 rounded-lg flex items-center justify-center group-hover:bg-orange-200 dark:group-hover:bg-orange-900/30 transition-colors">
-                  <Clock className="h-6 w-6 text-orange-600 dark:text-orange-400" />
-                </div>
                 <CardTitle>24/7 Support</CardTitle>
                 <CardDescription>
                   Round-the-clock customer support in multiple languages
@@ -196,11 +240,17 @@ export default function HomePage() {
               </CardHeader>
             </Card>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50">
+            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+                  alt="Data analytics dashboard"
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-300"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+              </div>
               <CardHeader>
-                <div className="w-12 h-12 bg-red-100 dark:bg-red-900/20 rounded-lg flex items-center justify-center group-hover:bg-red-200 dark:group-hover:bg-red-900/30 transition-colors">
-                  <TrendingUp className="h-6 w-6 text-red-600 dark:text-red-400" />
-                </div>
                 <CardTitle>Analytics & Insights</CardTitle>
                 <CardDescription>
                   Detailed reports and analytics to optimize your shipping
@@ -264,35 +314,17 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                      <Package className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Package Tracking</h4>
-                      <p className="text-sm text-muted-foreground">Real-time updates</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
-                      <Truck className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Fleet Management</h4>
-                      <p className="text-sm text-muted-foreground">Optimized routes</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Insurance</h4>
-                      <p className="text-sm text-muted-foreground">Full coverage options</p>
-                    </div>
-                  </div>
+              <div className="relative h-96 rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&h=600&fit=crop"
+                  alt="Shipping containers and logistics operations"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Global Logistics Network</h4>
+                  <p className="text-white/90">Connecting businesses worldwide through efficient shipping solutions</p>
                 </div>
               </div>
             </div>
@@ -316,8 +348,17 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-0 bg-background/50">
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <Card className="border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=800&h=400&fit=crop"
+                  alt="Sarah Johnson - Operations Manager"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -339,7 +380,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-background/50">
+            <Card className="border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=400&fit=crop"
+                  alt="Michael Chen - CEO"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -347,7 +397,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  "The global coverage and customer support are outstanding. We've expanded to 15 new countries thanks to ShipMate's reliable service."
+                  &quot;The global coverage and customer support are outstanding. We&apos;ve expanded to 15 new countries thanks to ShipMate&apos;s reliable service.&quot;
                 </p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
@@ -361,7 +411,16 @@ export default function HomePage() {
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-background/50">
+            <Card className="border-0 bg-background/50 overflow-hidden">
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
+                  alt="Emily Rodriguez - Logistics Director"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
+              </div>
               <CardContent className="pt-6">
                 <div className="flex items-center mb-4">
                   {[...Array(5)].map((_, i) => (
@@ -369,7 +428,7 @@ export default function HomePage() {
                   ))}
                 </div>
                 <p className="text-muted-foreground mb-4">
-                  "The platform is incredibly user-friendly and the analytics help us make data-driven decisions. Highly recommended!"
+                  &quot;The platform is incredibly user-friendly and the analytics help us make data-driven decisions. Highly recommended!&quot;
                 </p>
                 <div className="flex items-center space-x-3">
                   <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center">
@@ -400,7 +459,7 @@ export default function HomePage() {
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
                 Founded in 2020, ShipMate Logistics has grown from a local startup to a global leader in logistics technology. 
-                We're committed to making shipping simple, transparent, and efficient for businesses of all sizes.
+                    We&apos;re committed to making shipping simple, transparent, and efficient for businesses of all sizes, with reliable door-to-door delivery services.
               </p>
               <div className="grid grid-cols-2 gap-6">
                 <div>
@@ -422,35 +481,17 @@ export default function HomePage() {
               </div>
             </div>
             <div className="relative">
-              <div className="bg-gradient-to-br from-primary/10 to-primary/5 rounded-2xl p-8">
-                <div className="space-y-6">
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center">
-                      <Award className="h-6 w-6 text-primary" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Industry Awards</h4>
-                      <p className="text-sm text-muted-foreground">Best Logistics Platform 2024</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center">
-                      <Shield className="h-6 w-6 text-green-600 dark:text-green-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Security Certified</h4>
-                      <p className="text-sm text-muted-foreground">ISO 27001 & SOC 2 Compliant</p>
-                    </div>
-                  </div>
-                  <div className="flex items-center space-x-4">
-                    <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center">
-                      <Globe className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-foreground">Global Network</h4>
-                      <p className="text-sm text-muted-foreground">Partners in 150+ countries</p>
-                    </div>
-                  </div>
+              <div className="relative h-96 rounded-2xl overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=600&fit=crop"
+                  alt="Modern corporate office building"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                <div className="absolute bottom-6 left-6 right-6 text-white">
+                  <h4 className="text-xl font-semibold mb-2">Leading the Future</h4>
+                  <p className="text-white/90">Innovative logistics technology driving global commerce</p>
                 </div>
               </div>
             </div>
@@ -465,17 +506,17 @@ export default function HomePage() {
             Ready to Transform Your
             <span className="block">Logistics Operations?</span>
           </h2>
-          <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8">
-            Join thousands of businesses that trust ShipMate Logistics for their shipping needs. 
-            Get started today and experience the difference.
-          </p>
+                     <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8">
+             Join thousands of businesses that trust ShipMate Logistics for their door-to-door shipping needs. 
+             Start managing your logistics today.
+           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link href="/sign-up">
-              <Button size="lg" variant="secondary" className="w-full sm:w-auto">
-                Start Free Trial
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </Link>
+                         <Link href="/sign-up">
+               <Button size="lg" variant="secondary" className="w-full sm:w-auto">
+                 Get Started
+                 <ArrowRight className="ml-2 h-4 w-4" />
+               </Button>
+             </Link>
             <Link href="/sign-in">
               <Button size="lg" variant="outline" className="w-full sm:w-auto bg-transparent border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary">
                 Sign In
@@ -502,33 +543,51 @@ export default function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-0 bg-background/50 text-center">
+            <Card className="border-0 bg-background/50 text-center overflow-hidden">
+              <div className="relative h-32 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
+                  alt="Customer service representative on phone"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
               <CardContent className="pt-6">
-                <div className="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Phone className="h-6 w-6 text-primary" />
-                </div>
                 <h3 className="font-semibold text-foreground mb-2">Phone Support</h3>
                 <p className="text-muted-foreground mb-4">24/7 customer support</p>
                 <p className="text-primary font-medium">+1 (555) 123-4567</p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-background/50 text-center">
+            <Card className="border-0 bg-background/50 text-center overflow-hidden">
+              <div className="relative h-32 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=300&fit=crop"
+                  alt="Customer service team working"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
               <CardContent className="pt-6">
-                <div className="w-12 h-12 bg-green-100 dark:bg-green-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <Mail className="h-6 w-6 text-green-600 dark:text-green-400" />
-                </div>
                 <h3 className="font-semibold text-foreground mb-2">Email Support</h3>
                 <p className="text-muted-foreground mb-4">Get help via email</p>
                 <p className="text-primary font-medium">support@shipmate.com</p>
               </CardContent>
             </Card>
 
-            <Card className="border-0 bg-background/50 text-center">
+            <Card className="border-0 bg-background/50 text-center overflow-hidden">
+              <div className="relative h-32 overflow-hidden">
+                <Image
+                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
+                  alt="Live chat support interface"
+                  fill
+                  className="object-cover"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+              </div>
               <CardContent className="pt-6">
-                <div className="w-12 h-12 bg-blue-100 dark:bg-blue-900/20 rounded-lg flex items-center justify-center mx-auto mb-4">
-                  <MessageSquare className="h-6 w-6 text-blue-600 dark:text-blue-400" />
-                </div>
                 <h3 className="font-semibold text-foreground mb-2">Live Chat</h3>
                 <p className="text-muted-foreground mb-4">Instant messaging support</p>
                 <p className="text-primary font-medium">Available 24/7</p>
@@ -550,7 +609,7 @@ export default function HomePage() {
                 <h3 className="text-lg font-semibold text-foreground">ShipMate Logistics</h3>
               </div>
               <p className="text-muted-foreground mb-4">
-                Your trusted partner in global logistics and shipping solutions. 
+                Your trusted partner in global logistics and door-to-door shipping solutions. 
                 Making shipping simple, transparent, and efficient.
               </p>
               <div className="flex space-x-4">
@@ -569,11 +628,11 @@ export default function HomePage() {
             <div>
               <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">Services</h4>
               <ul className="space-y-3 text-muted-foreground">
+                <li><Link href="#" className="hover:text-foreground transition-colors">Door-to-Door Delivery</Link></li>
                 <li><Link href="#" className="hover:text-foreground transition-colors">Package Tracking</Link></li>
                 <li><Link href="#" className="hover:text-foreground transition-colors">Express Delivery</Link></li>
                 <li><Link href="#" className="hover:text-foreground transition-colors">International Shipping</Link></li>
                 <li><Link href="#" className="hover:text-foreground transition-colors">Warehouse Management</Link></li>
-                <li><Link href="#" className="hover:text-foreground transition-colors">Fleet Management</Link></li>
               </ul>
             </div>
             
