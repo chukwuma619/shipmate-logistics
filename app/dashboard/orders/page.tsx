@@ -110,10 +110,15 @@ export default async function OrdersPage() {
                       )}
                     </div>
 
-                    <div className="pt-2">
-                      <Link href={`/track/${order.trackingNumber}`}>
+                    <div className="pt-2 space-y-2">
+                      <Link href={`/dashboard/orders/${order.id}`}>
                         <Button variant="outline" size="sm" className="w-full">
-                          View Details
+                          Manage Order
+                        </Button>
+                      </Link>
+                      <Link href={`/track/${order.trackingNumber}`}>
+                        <Button variant="ghost" size="sm" className="w-full">
+                          View Public Tracking
                         </Button>
                       </Link>
                     </div>

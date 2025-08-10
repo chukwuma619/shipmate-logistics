@@ -27,9 +27,7 @@ export default async function DashboardPage() {
               </p>
             </div>
             <div className="flex items-center space-x-4">
-              <span className="text-sm text-muted-foreground">
-                Role: {session.user.role || "customer"}
-              </span>
+              
               <form action="/api/auth/sign-out" method="POST">
                 <Button type="submit" variant="outline">
                   Sign Out
