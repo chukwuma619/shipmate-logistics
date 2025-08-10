@@ -1,7 +1,7 @@
 import { notFound } from "next/navigation";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Package, MapPin, Clock, Truck } from "lucide-react";
+import { Package, MapPin, Truck } from "lucide-react";
 import { format } from "date-fns";
 
 async function getTrackingInfo(trackingNumber: string) {

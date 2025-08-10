@@ -12,13 +12,11 @@ import {
 import { motion } from "framer-motion";
 
 import {
-  Package,
   Globe,
   Users,
   Star,
   ArrowRight,
   CheckCircle,
-  Zap,
   TrendingUp,
 } from "lucide-react";
 import { TrackingSearch } from "@/components/tracking/tracking-search";

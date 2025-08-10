@@ -1,9 +1,9 @@
 import { auth } from "@/lib/auth";
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { authClient } from "@/lib/auth-client";
 
 export default async function DashboardPage() {
   const session = await auth.api.getSession({
@@ -84,18 +84,18 @@ export default async function DashboardPage() {
               </CardHeader>
               <CardContent>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                  <a href="/dashboard/orders/new">
+                  <Link href="/dashboard/orders/new">
                     <Button className="h-20 flex flex-col items-center justify-center w-full">
                       <span className="text-lg">📦</span>
                       <span className="text-sm mt-1">Create Order</span>
                     </Button>
-                  </a>
-                  <a href="/dashboard/orders">
+                  </Link>
+                  <Link href="/dashboard/orders">
                     <Button className="h-20 flex flex-col items-center justify-center w-full" variant="outline">
                       <span className="text-lg">📋</span>
                       <span className="text-sm mt-1">View Orders</span>
                     </Button>
-                  </a>
+                  </Link>
                   <Button className="h-20 flex flex-col items-center justify-center" variant="outline">
                     <span className="text-lg">📊</span>
                     <span className="text-sm mt-1">View Reports</span>
