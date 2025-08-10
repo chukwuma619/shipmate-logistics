@@ -1,3 +1,4 @@
+"use client"
 import Link from "next/link";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
@@ -8,6 +9,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
+import { motion } from "framer-motion";
 
 import {
   Package,
@@ -21,12 +23,38 @@ import {
 } from "lucide-react";
 import { TrackingSearch } from "@/components/tracking/tracking-search";
 
+// Animation variants
+const fadeInUp = {
+  initial: { opacity: 0, y: 60 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: "easeOut" }
+};
+
+const staggerContainer = {
+  animate: {
+    transition: {
+      staggerChildren: 0.1
+    }
+  }
+};
+
+const scaleIn = {
+  initial: { opacity: 0, scale: 0.8 },
+  animate: { opacity: 1, scale: 1 },
+  transition: { duration: 0.5, ease: "easeOut" }
+};
+
 export default function HomePage() {
   return (
     <>
     
           {/* Hero Section */}
-          <section className="relative overflow-hidden">
+          <motion.section 
+            className="relative overflow-hidden"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8 }}
+          >
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -42,7 +70,12 @@ export default function HomePage() {
         </div>
         <div className="absolute inset-0 bg-grid-white/[0.02] bg-[size:50px_50px]" />
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32">
-          <div className="text-center">
+          <motion.div 
+            className="text-center"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
             <h1 className="text-4xl font-bold text-primary-foreground sm:text-5xl md:text-6xl lg:text-7xl">
               Global Logistics
               <span className="block text-primary-foreground/90">
@@ -56,7 +89,12 @@ export default function HomePage() {
             </p>
 
             {/* Tracking Form */}
-            <div className="mt-12 max-w-lg mx-auto">
+            <motion.div 
+              className="mt-12 max-w-lg mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <Card className="shadow-2xl border-0 bg-background/95 backdrop-blur">
                 <CardHeader className="pb-4">
                   <CardTitle className="text-center text-lg">
@@ -70,10 +108,15 @@ export default function HomePage() {
                   <TrackingSearch />
                 </CardContent>
               </Card>
-            </div>
+            </motion.div>
 
             {/* Stats */}
-            <div className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+            <motion.div 
+              className="mt-16 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.6 }}
+            >
               <div className="text-center">
                 <div className="text-3xl font-bold text-primary-foreground">
                   50M+
@@ -106,15 +149,25 @@ export default function HomePage() {
                   Customer Support
                 </div>
               </div>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Features Section */}
-      <section id="features" className="py-20 bg-muted/30">
+      <motion.section 
+        id="features" 
+        className="py-20 bg-muted/30"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={fadeInUp}
+          >
 
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Everything You Need for
@@ -124,126 +177,151 @@ export default function HomePage() {
               Our comprehensive platform provides all the tools you need to
               manage your logistics efficiently
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=400&fit=crop"
-                  alt="Modern warehouse with organized packages"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>Smart Package Management</CardTitle>
-                <CardDescription>
-                  Organize and track all your shipments in one intuitive
-                  dashboard
-                </CardDescription>
-              </CardHeader>
-            </Card>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            variants={staggerContainer}
+          >
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&h=400&fit=crop"
+                    alt="Modern warehouse with organized packages"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>Smart Package Management</CardTitle>
+                  <CardDescription>
+                    Organize and track all your shipments in one intuitive
+                    dashboard
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
-                  alt="Real-time tracking dashboard"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>Real-Time Tracking</CardTitle>
-                <CardDescription>
-                  Get instant updates on your shipment&apos;s location and
-                  status
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=400&fit=crop"
+                    alt="Real-time tracking dashboard"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>Real-Time Tracking</CardTitle>
+                  <CardDescription>
+                    Get instant updates on your shipment&apos;s location and
+                    status
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop"
-                  alt="Global shipping network"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>Global Coverage</CardTitle>
-                <CardDescription>
-                  Ship and track packages to and from anywhere in the world
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&h=400&fit=crop"
+                    alt="Global shipping network"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>Global Coverage</CardTitle>
+                  <CardDescription>
+                    Ship and track packages to and from anywhere in the world
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop"
-                  alt="Secure logistics operations"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>Secure & Reliable</CardTitle>
-                <CardDescription>
-                  Enterprise-grade security with 99.9% uptime guarantee
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=800&h=400&fit=crop"
+                    alt="Secure logistics operations"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>Secure & Reliable</CardTitle>
+                  <CardDescription>
+                    Enterprise-grade security with 99.9% uptime guarantee
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop"
-                  alt="24/7 customer support team"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>24/7 Support</CardTitle>
-                <CardDescription>
-                  Round-the-clock customer support in multiple languages
-                </CardDescription>
-              </CardHeader>
-            </Card>
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=400&fit=crop"
+                    alt="24/7 customer support team"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>24/7 Support</CardTitle>
+                  <CardDescription>
+                    Round-the-clock customer support in multiple languages
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
 
-            <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
-                  alt="Data analytics dashboard"
-                  fill
-                  className="object-cover group-hover:scale-105 transition-transform duration-300"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-              </div>
-              <CardHeader>
-                <CardTitle>Analytics & Insights</CardTitle>
-                <CardDescription>
-                  Detailed reports and analytics to optimize your shipping
-                </CardDescription>
-              </CardHeader>
-            </Card>
-          </div>
+            <motion.div variants={scaleIn}>
+              <Card className="group hover:shadow-lg transition-all duration-300 border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=400&fit=crop"
+                    alt="Data analytics dashboard"
+                    fill
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+                </div>
+                <CardHeader>
+                  <CardTitle>Analytics & Insights</CardTitle>
+                  <CardDescription>
+                    Detailed reports and analytics to optimize your shipping
+                  </CardDescription>
+                </CardHeader>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-background">
+      <motion.section 
+        id="services" 
+        className="py-20 bg-background"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={fadeInUp}
+          >
 
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Comprehensive
@@ -253,9 +331,12 @@ export default function HomePage() {
               From express delivery to bulk shipping, we offer solutions for
               every business need
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <motion.div 
+            className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+            variants={fadeInUp}
+          >
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-6">
                 Express & Standard Shipping
@@ -327,14 +408,23 @@ export default function HomePage() {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Testimonials Section */}
-      <section className="py-20 bg-muted/30">
+      <motion.section 
+        className="py-20 bg-muted/30"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={fadeInUp}
+          >
 
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Trusted by
@@ -344,130 +434,146 @@ export default function HomePage() {
               See what our customers say about their experience with ShipMate
               Logistics
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
-                  alt="Sarah Johnson - Operations Manager"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 text-yellow-400 fill-current"
-                    />
-                  ))}
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+          >
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
+                    alt="Sarah Johnson - Operations Manager"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <p className="text-muted-foreground mb-4">
-                  &quot;ShipMate Logistics has transformed our shipping
-                  operations. The real-time tracking and analytics have helped
-                  us reduce delivery times by 40%.&quot;
-                </p>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
-                    <Users className="h-5 w-5 text-primary" />
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 text-yellow-400 fill-current"
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground">Sarah Johnson</p>
-                    <p className="text-sm text-muted-foreground">
-                      Operations Manager, TechCorp
-                    </p>
+                  <p className="text-muted-foreground mb-4">
+                    &quot;ShipMate Logistics has transformed our shipping
+                    operations. The real-time tracking and analytics have helped
+                    us reduce delivery times by 40%.&quot;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-primary/20 rounded-full flex items-center justify-center">
+                      <Users className="h-5 w-5 text-primary" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">Sarah Johnson</p>
+                      <p className="text-sm text-muted-foreground">
+                        Operations Manager, TechCorp
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=400&fit=crop"
-                  alt="Michael Chen - CEO"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 text-yellow-400 fill-current"
-                    />
-                  ))}
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=800&h=400&fit=crop"
+                    alt="Michael Chen - CEO"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <p className="text-muted-foreground mb-4">
-                  &quot;The global coverage and customer support are
-                  outstanding. We&apos;ve expanded to 15 new countries thanks to
-                  ShipMate&apos;s reliable service.&quot;
-                </p>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
-                    <Globe className="h-5 w-5 text-green-600 dark:text-green-400" />
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 text-yellow-400 fill-current"
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground">Michael Chen</p>
-                    <p className="text-sm text-muted-foreground">
-                      CEO, GlobalTrade Inc
-                    </p>
+                  <p className="text-muted-foreground mb-4">
+                    &quot;The global coverage and customer support are
+                    outstanding. We&apos;ve expanded to 15 new countries thanks to
+                    ShipMate&apos;s reliable service.&quot;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
+                      <Globe className="h-5 w-5 text-green-600 dark:text-green-400" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">Michael Chen</p>
+                      <p className="text-sm text-muted-foreground">
+                        CEO, GlobalTrade Inc
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="border-0 bg-background/50 overflow-hidden">
-              <div className="relative h-48 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
-                  alt="Emily Rodriguez - Logistics Director"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <div className="flex items-center mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star
-                      key={i}
-                      className="h-4 w-4 text-yellow-400 fill-current"
-                    />
-                  ))}
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 overflow-hidden">
+                <div className="relative h-48 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&h=400&fit=crop"
+                    alt="Emily Rodriguez - Logistics Director"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                 </div>
-                <p className="text-muted-foreground mb-4">
-                  &quot;The platform is incredibly user-friendly and the
-                  analytics help us make data-driven decisions. Highly
-                  recommended!&quot;
-                </p>
-                <div className="flex items-center space-x-3">
-                  <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center">
-                    <TrendingUp className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                <CardContent className="pt-6">
+                  <div className="flex items-center mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className="h-4 w-4 text-yellow-400 fill-current"
+                      />
+                    ))}
                   </div>
-                  <div>
-                    <p className="font-medium text-foreground">
-                      Emily Rodriguez
-                    </p>
-                    <p className="text-sm text-muted-foreground">
-                      Logistics Director, RetailPlus
-                    </p>
+                  <p className="text-muted-foreground mb-4">
+                    &quot;The platform is incredibly user-friendly and the
+                    analytics help us make data-driven decisions. Highly
+                    recommended!&quot;
+                  </p>
+                  <div className="flex items-center space-x-3">
+                    <div className="w-10 h-10 bg-purple-100 dark:bg-purple-900/20 rounded-full flex items-center justify-center">
+                      <TrendingUp className="h-5 w-5 text-purple-600 dark:text-purple-400" />
+                    </div>
+                    <div>
+                      <p className="font-medium text-foreground">
+                        Emily Rodriguez
+                      </p>
+                      <p className="text-sm text-muted-foreground">
+                        Logistics Director, RetailPlus
+                      </p>
+                    </div>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-background">
+      <motion.section 
+        id="about" 
+        className="py-20 bg-background"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
@@ -531,10 +637,16 @@ export default function HomePage() {
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-gradient-to-r from-primary to-primary/80">
+      <motion.section 
+        className="py-20 bg-gradient-to-r from-primary to-primary/80"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={fadeInUp}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-primary-foreground sm:text-4xl mb-6">
             Ready to Transform Your
@@ -566,12 +678,22 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </motion.section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-muted/30">
+      <motion.section 
+        id="contact" 
+        className="py-20 bg-muted/30"
+        initial="initial"
+        whileInView="animate"
+        viewport={{ once: true, amount: 0.3 }}
+        variants={staggerContainer}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <motion.div 
+            className="text-center mb-16"
+            variants={fadeInUp}
+          >
 
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Get in
@@ -580,72 +702,81 @@ export default function HomePage() {
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
               Have questions? Our team is here to help you succeed
             </p>
-          </div>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="border-0 bg-background/50 text-center overflow-hidden">
-              <div className="relative h-32 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
-                  alt="Customer service representative on phone"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold text-foreground mb-2">
-                  Phone Support
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  24/7 customer support
-                </p>
-                <p className="text-primary font-medium">+1 (555) 123-4567</p>
-              </CardContent>
-            </Card>
+          <motion.div 
+            className="grid grid-cols-1 md:grid-cols-3 gap-8"
+            variants={staggerContainer}
+          >
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 text-center overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
+                    alt="Customer service representative on phone"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-foreground mb-2">
+                    Phone Support
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    24/7 customer support
+                  </p>
+                  <p className="text-primary font-medium">+1 (555) 123-4567</p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="border-0 bg-background/50 text-center overflow-hidden">
-              <div className="relative h-32 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=300&fit=crop"
-                  alt="Customer service team working"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold text-foreground mb-2">
-                  Email Support
-                </h3>
-                <p className="text-muted-foreground mb-4">Get help via email</p>
-                <p className="text-primary font-medium">support@shipmate.com</p>
-              </CardContent>
-            </Card>
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 text-center overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=800&h=300&fit=crop"
+                    alt="Customer service team working"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-foreground mb-2">
+                    Email Support
+                  </h3>
+                  <p className="text-muted-foreground mb-4">Get help via email</p>
+                  <p className="text-primary font-medium">support@shipmate.com</p>
+                </CardContent>
+              </Card>
+            </motion.div>
 
-            <Card className="border-0 bg-background/50 text-center overflow-hidden">
-              <div className="relative h-32 overflow-hidden">
-                <Image
-                  src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
-                  alt="Live chat support interface"
-                  fill
-                  className="object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
-              </div>
-              <CardContent className="pt-6">
-                <h3 className="font-semibold text-foreground mb-2">
-                  Live Chat
-                </h3>
-                <p className="text-muted-foreground mb-4">
-                  Instant messaging support
-                </p>
-                <p className="text-primary font-medium">Available 24/7</p>
-              </CardContent>
-            </Card>
-          </div>
+            <motion.div variants={scaleIn}>
+              <Card className="border-0 bg-background/50 text-center overflow-hidden">
+                <div className="relative h-32 overflow-hidden">
+                  <Image
+                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=300&fit=crop"
+                    alt="Live chat support interface"
+                    fill
+                    className="object-cover"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent" />
+                </div>
+                <CardContent className="pt-6">
+                  <h3 className="font-semibold text-foreground mb-2">
+                    Live Chat
+                  </h3>
+                  <p className="text-muted-foreground mb-4">
+                    Instant messaging support
+                  </p>
+                  <p className="text-primary font-medium">Available 24/7</p>
+                </CardContent>
+              </Card>
+            </motion.div>
+          </motion.div>
         </div>
-      </section>
+      </motion.section>
 
     </>
   );
