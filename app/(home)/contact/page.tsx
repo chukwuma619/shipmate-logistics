@@ -16,35 +16,9 @@ import {
 
 export default function ContactPage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <Link href="/" className="flex items-center space-x-2">
-              <Package className="h-8 w-8 text-primary" />
-              <span className="text-xl font-bold text-foreground">ShipMate</span>
-            </Link>
-            <div className="hidden md:flex space-x-8">
-              <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
-                Home
-              </Link>
-              <Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">
-                About
-              </Link>
-              <Link href="/contact" className="text-foreground font-medium">
-                Contact
-              </Link>
-            </div>
-            <Link href="/contact">
-              <Button>GET A QUOTE</Button>
-            </Link>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
+   <>
+         {/* Hero Section */}
+         <section className="relative overflow-hidden">
         <div className="absolute inset-0">
           <Image
             src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=1200&h=600&fit=crop"
@@ -391,7 +365,7 @@ export default function ContactPage() {
             Get your custom quote today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
-            <Link href="#quote-form">
+            <Link href="#">
               <Button size="lg" variant="secondary" className="w-full sm:w-auto">
                 Request Quote
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -405,56 +379,7 @@ export default function ContactPage() {
           </div>
         </div>
       </section>
-
-      {/* Footer */}
-      <footer className="bg-muted py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <Package className="h-8 w-8 text-primary" />
-                <span className="text-xl font-bold text-foreground">ShipMate</span>
-              </div>
-              <p className="text-muted-foreground">
-                Revolutionizing global logistics through innovative technology and exceptional service.
-              </p>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Company</h3>
-              <ul className="space-y-2">
-                <li><Link href="/about" className="text-muted-foreground hover:text-foreground transition-colors">About</Link></li>
-                <li><Link href="/careers" className="text-muted-foreground hover:text-foreground transition-colors">Careers</Link></li>
-                <li><Link href="/press" className="text-muted-foreground hover:text-foreground transition-colors">Press</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Support</h3>
-              <ul className="space-y-2">
-                <li><Link href="/help" className="text-muted-foreground hover:text-foreground transition-colors">Help Center</Link></li>
-                <li><Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">Contact</Link></li>
-                <li><Link href="/status" className="text-muted-foreground hover:text-foreground transition-colors">Status</Link></li>
-              </ul>
-            </div>
-            
-            <div>
-              <h3 className="font-semibold text-foreground mb-4">Legal</h3>
-              <ul className="space-y-2">
-                <li><Link href="/privacy" className="text-muted-foreground hover:text-foreground transition-colors">Privacy</Link></li>
-                <li><Link href="/terms" className="text-muted-foreground hover:text-foreground transition-colors">Terms</Link></li>
-                <li><Link href="/security" className="text-muted-foreground hover:text-foreground transition-colors">Security</Link></li>
-              </ul>
-            </div>
-          </div>
-          
-          <div className="border-t border-border mt-12 pt-8 text-center">
-            <p className="text-muted-foreground">
-              © 2024 ShipMate Logistics. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
-    </div>
+   
+   </>
   );
 }

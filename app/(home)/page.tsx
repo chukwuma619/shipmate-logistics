@@ -8,7 +8,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
+
 import {
   Package,
   Globe,
@@ -23,58 +23,10 @@ import { TrackingSearch } from "@/components/tracking/tracking-search";
 
 export default function HomePage() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Navigation */}
-      <nav className="bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50 border-b">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center space-x-8">
-              <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Package className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <h1 className="text-xl font-bold text-foreground">
-                  ShipMate Logistics
-                </h1>
-              </div>
-              <div className="hidden md:flex items-center space-x-6">
-                <Link
-                  href="#features"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Features
-                </Link>
-                <Link
-                  href="#services"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Services
-                </Link>
-                <Link
-                  href="/about"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  About
-                </Link>
-                <Link
-                  href="/contact"
-                  className="text-sm font-medium text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <Link href="/contact">
-                <Button>GET A QUOTE</Button>
-              </Link>
-            </div>
-          </div>
-        </div>
-      </nav>
-
-      {/* Hero Section */}
-      <section className="relative overflow-hidden">
+    <>
+    
+          {/* Hero Section */}
+          <section className="relative overflow-hidden">
         {/* Background Image */}
         <div className="absolute inset-0">
           <Image
@@ -163,9 +115,7 @@ export default function HomePage() {
       <section id="features" className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              Features
-            </Badge>
+
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Everything You Need for
               <span className="text-primary"> Seamless Shipping</span>
@@ -294,9 +244,7 @@ export default function HomePage() {
       <section id="services" className="py-20 bg-background">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              Services
-            </Badge>
+
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Comprehensive
               <span className="text-primary"> Logistics Solutions</span>
@@ -387,9 +335,7 @@ export default function HomePage() {
       <section className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              Testimonials
-            </Badge>
+
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Trusted by
               <span className="text-primary"> Leading Businesses</span>
@@ -525,9 +471,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <Badge variant="outline" className="mb-4">
-                About Us
-              </Badge>
+
               <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-6">
                 Leading the Future of
                 <span className="text-primary"> Global Logistics</span>
@@ -628,9 +572,7 @@ export default function HomePage() {
       <section id="contact" className="py-20 bg-muted/30">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Badge variant="outline" className="mb-4">
-              Contact
-            </Badge>
+
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl">
               Get in
               <span className="text-primary"> Touch</span>
@@ -705,217 +647,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-muted py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <div>
-              <div className="flex items-center space-x-2 mb-4">
-                <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-                  <Package className="h-5 w-5 text-primary-foreground" />
-                </div>
-                <h3 className="text-lg font-semibold text-foreground">
-                  ShipMate Logistics
-                </h3>
-              </div>
-              <p className="text-muted-foreground mb-4">
-                Your trusted partner in global logistics and door-to-door
-                shipping solutions. Making shipping simple, transparent, and
-                efficient.
-              </p>
-              <div className="flex space-x-4">
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <span className="text-xs font-medium text-primary">T</span>
-                </div>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <span className="text-xs font-medium text-primary">L</span>
-                </div>
-                <div className="w-8 h-8 bg-primary/20 rounded-lg flex items-center justify-center">
-                  <span className="text-xs font-medium text-primary">F</span>
-                </div>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">
-                Services
-              </h4>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Door-to-Door Delivery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Package Tracking
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Express Delivery
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    International Shipping
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Warehouse Management
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">
-                Support
-              </h4>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Help Center
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Contact Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Track Package
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Shipping Rates
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    API Documentation
-                  </Link>
-                </li>
-              </ul>
-            </div>
-
-            <div>
-              <h4 className="text-sm font-semibold uppercase tracking-wider text-foreground mb-4">
-                Company
-              </h4>
-              <ul className="space-y-3 text-muted-foreground">
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    About Us
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Careers
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Press
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Privacy Policy
-                  </Link>
-                </li>
-                <li>
-                  <Link
-                    href="#"
-                    className="hover:text-foreground transition-colors"
-                  >
-                    Terms of Service
-                  </Link>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className="mt-12 pt-8 border-t border-border">
-            <div className="flex flex-col md:flex-row justify-between items-center">
-              <p className="text-muted-foreground text-sm">
-                &copy; 2024 ShipMate Logistics. All rights reserved.
-              </p>
-              <div className="flex space-x-6 mt-4 md:mt-0">
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Terms
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Cookies
-                </Link>
-                <Link
-                  href="#"
-                  className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-                >
-                  Security
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </footer>
-    </div>
+    </>
   );
 }
