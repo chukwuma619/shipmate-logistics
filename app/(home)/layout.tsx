@@ -1,12 +1,22 @@
+"use client"
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { usePathname } from "next/navigation";
 import {
   
   Package
   } from "lucide-react";
 
-
 export default function HomeLayout({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return pathname === "/";
+    }
+    return pathname.startsWith(path);
+  };
+
   return (
     <div className="min-h-screen bg-background">
     {/* Navigation */}
@@ -18,13 +28,34 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
             <span className="text-xl font-bold text-foreground">ShipMate</span>
           </Link>
           <div className="hidden md:flex space-x-8">
-            <Link href="/" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              href="/" 
+              className={`transition-colors ${
+                isActive("/") 
+                  ? "text-foreground font-medium" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
               Home
             </Link>
-            <Link href="/about" className="text-foreground font-medium">
+            <Link 
+              href="/about" 
+              className={`transition-colors ${
+                isActive("/about") 
+                  ? "text-foreground font-medium" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
               About
             </Link>
-            <Link href="/contact" className="text-muted-foreground hover:text-foreground transition-colors">
+            <Link 
+              href="/contact" 
+              className={`transition-colors ${
+                isActive("/contact") 
+                  ? "text-foreground font-medium" 
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
               Contact
             </Link>
           </div>
