@@ -3,23 +3,9 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Package, MapPin, Truck } from "lucide-react";
 import { format } from "date-fns";
+import { getTrackingInfo } from "@/lib/api/track";
 
-async function getTrackingInfo(trackingNumber: string) {
-  try {
-    const response = await fetch(`/api/track/${trackingNumber}`, {
-      cache: 'no-store'
-    });
-    
-    if (!response.ok) {
-      return null;
-    }
-    
-    return response.json();
-  } catch (error) {
-    console.error('Error fetching tracking info:', error);
-    return null;
-  }
-}
+
 
 function getStatusColor(status: string) {
   switch (status) {
@@ -59,11 +45,11 @@ export default async function TrackingPage({
   const { tracking_number } = await params;
   const trackingData = await getTrackingInfo(tracking_number);
 
-  if (!trackingData) {
+  if (trackingData.error || !trackingData.data) {
     notFound();
   }
 
-  const { order, updates } = trackingData;
+  const {order, updates} = trackingData.data;
 
   return (
     <div className="min-h-screen bg-muted/50 py-8">
@@ -142,7 +128,7 @@ export default async function TrackingPage({
                   </div>
                 ) : (
                   <div className="space-y-6">
-                    {updates.map((update: { id: string; location: string; status: string; description?: string; timestamp: string }, index: number) => (
+                    {updates.map((update: { id: string; location: string; status: string; description: string | null; timestamp: Date }, index: number) => (
                       <div key={update.id} className="flex items-start space-x-4">
                         <div className="flex-shrink-0">
                           <div className="w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
@@ -158,7 +144,7 @@ export default async function TrackingPage({
                               {update.location}
                             </h4>
                             <time className="text-sm text-muted-foreground">
-                              {format(new Date(update.timestamp), 'MMM d, yyyy h:mm a')}
+                              {format(update.timestamp, 'MMM d, yyyy h:mm a')}
                             </time>
                           </div>
                           <Badge className={`mt-1 ${getStatusColor(update.status)}`}>
