@@ -6,7 +6,7 @@ import { format } from "date-fns";
 
 async function getTrackingInfo(trackingNumber: string) {
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000'}/api/track/${trackingNumber}`, {
+    const response = await fetch(`/api/track/${trackingNumber}`, {
       cache: 'no-store'
     });
     
