@@ -429,7 +429,7 @@ export default function HomePage() {
               <span className="text-primary"> Leading Businesses</span>
             </h2>
             <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
-              See what our customers say about their experience with ShipMate
+              See what our customers say about their experience with Toshipper
               Logistics
             </p>
           </motion.div>
@@ -459,7 +459,7 @@ export default function HomePage() {
                     ))}
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    &quot;ShipMate Logistics has transformed our shipping
+                    &quot;Toshipper Logistics has transformed our shipping
                     operations. The real-time tracking and analytics have helped
                     us reduce delivery times by 40%.&quot;
                   </p>
@@ -501,7 +501,7 @@ export default function HomePage() {
                   <p className="text-muted-foreground mb-4">
                     &quot;The global coverage and customer support are
                     outstanding. We&apos;ve expanded to 15 new countries thanks to
-                    ShipMate&apos;s reliable service.&quot;
+                    Toshipper&apos;s reliable service.&quot;
                   </p>
                   <div className="flex items-center space-x-3">
                     <div className="w-10 h-10 bg-green-100 dark:bg-green-900/20 rounded-full flex items-center justify-center">
@@ -581,7 +581,7 @@ export default function HomePage() {
                 <span className="text-primary"> Global Logistics</span>
               </h2>
               <p className="text-lg text-muted-foreground mb-6">
-                Founded in 2020, ShipMate Logistics has grown from a local
+                Founded in 2020, Toshipper Logistics has grown from a local
                 startup to a global leader in logistics technology. We&apos;re
                 committed to making shipping simple, transparent, and efficient
                 for businesses of all sizes, with reliable door-to-door delivery
@@ -651,7 +651,7 @@ export default function HomePage() {
             <span className="block">Logistics Operations?</span>
           </h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8">
-            Join thousands of businesses that trust ShipMate Logistics for their
+            Join thousands of businesses that trust Toshipper Logistics for their
             door-to-door shipping needs. Start managing your logistics today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
@@ -745,7 +745,7 @@ export default function HomePage() {
                     Email Support
                   </h3>
                   <p className="text-muted-foreground mb-4">Get help via email</p>
-                  <p className="text-primary font-medium">support@shipmate.com</p>
+                  <p className="text-primary font-medium">support@toshipper.com</p>
                 </CardContent>
               </Card>
             </motion.div>

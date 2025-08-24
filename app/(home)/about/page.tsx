@@ -529,7 +529,7 @@ export default function AboutPage() {
             <span className="block">Logistics Operations?</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
-            Join thousands of businesses that trust ShipMate Logistics for their shipping needs.
+            Join thousands of businesses that trust Toshipper Logistics for their shipping needs.
             Start managing your logistics today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">

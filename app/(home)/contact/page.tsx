@@ -242,7 +242,7 @@ export default function ContactPage() {
                         <div>
                           <h4 className="font-semibold text-foreground">Email Support</h4>
                           <p className="text-muted-foreground mb-2">Get help via email</p>
-                          <p className="text-primary font-medium">quotes@shipmate.com</p>
+                          <p className="text-primary font-medium">quotes@toshipper.com</p>
                         </div>
                       </div>
                     </CardContent>
@@ -285,7 +285,7 @@ export default function ContactPage() {
             variants={fadeInUp}
           >
             <h2 className="text-3xl font-bold text-foreground sm:text-4xl mb-6">
-              Why Choose ShipMate?
+              Why Choose Toshipper?
             </h2>
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
               Discover what makes us the preferred choice for businesses worldwide
@@ -474,7 +474,7 @@ export default function ContactPage() {
             Ready to Get Started?
           </h2>
           <p className="text-xl text-primary-foreground/90 max-w-2xl mx-auto mb-8">
-            Join thousands of businesses that trust ShipMate Logistics for their shipping needs.
+            Join thousands of businesses that trust Toshipper Logistics for their shipping needs.
             Get your custom quote today.
           </p>
           <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">

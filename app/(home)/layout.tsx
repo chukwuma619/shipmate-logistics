@@ -25,7 +25,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
         <div className="flex justify-between items-center h-16">
           <Link href="/" className="flex items-center space-x-2">
             <Package className="h-8 w-8 text-primary" />
-            <span className="text-xl font-bold text-foreground">ShipMate</span>
+            <span className="text-xl font-bold text-foreground">Toshipper</span>
           </Link>
           <div className="hidden md:flex space-x-8">
             <Link 
@@ -78,7 +78,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
                   <Package className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <h3 className="text-lg font-semibold text-foreground">
-                  ShipMate Logistics
+                  Toshipper Logistics
                 </h3>
               </div>
               <p className="text-muted-foreground mb-4">
@@ -223,7 +223,7 @@ export default function HomeLayout({ children }: { children: React.ReactNode }) 
           <div className="mt-12 pt-8 border-t border-border">
             <div className="flex flex-col md:flex-row justify-between items-center">
               <p className="text-muted-foreground text-sm">
-                &copy; 2024 ShipMate Logistics. All rights reserved.
+                &copy; 2024 Toshipper Logistics. All rights reserved.
               </p>
 
             </div>

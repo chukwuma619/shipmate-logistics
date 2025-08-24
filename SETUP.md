@@ -1,4 +1,4 @@
-# ShipMate Logistics - Setup Guide
+# Toshipper Logistics - Setup Guide
 
 ## 🚀 Getting Started
 
@@ -15,7 +15,7 @@ This is a logistics tracking application built with Next.js 15, Better Auth, Dri
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd shipmate-logistics
+   cd toshipper-logistics
    ```
 
 2. **Install dependencies**
@@ -54,7 +54,7 @@ This is a logistics tracking application built with Next.js 15, Better Auth, Dri
 ## 🏗️ Project Structure
 
 ```
-shipmate-logistics/
+toshipper-logistics/
 ├── app/                    # Next.js App Router
 │   ├── api/               # API routes
 │   ├── auth/              # Authentication pages

@@ -1,4 +1,4 @@
-# ShipMate Logistics 🚚
+# Toshipper Logistics 🚚
 
 A modern logistics tracking application built with Next.js 15, featuring real-time package tracking, user authentication, and admin management tools.
 
@@ -47,7 +47,7 @@ A modern logistics tracking application built with Next.js 15, featuring real-ti
 ### 1. Clone the Repository
 ```bash
 git clone <your-repo-url>
-cd shipmate-logistics
+cd toshipper-logistics
 ```
 
 ### 2. Install Dependencies
@@ -94,7 +94,7 @@ Open [http://localhost:3000](http://localhost:3000) to see the application.
 ## 📁 Project Structure
 
 ```
-shipmate-logistics/
+toshipper-logistics/
 ├── app/                          # Next.js App Router
 │   ├── api/                      # API routes
 │   │   ├── auth/                 # Better Auth endpoints

@@ -1,4 +1,4 @@
-# ShipMate Logistics - Development TODO
+# Toshipper Logistics - Development TODO
 
 ## 🚀 Project Overview
 Building a shipping and tracking website where admins can manually create orders and update shipment locations, while customers can track their shipments using tracking numbers.
