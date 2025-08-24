@@ -654,7 +654,7 @@ export default function HomePage() {
             Join thousands of businesses that trust Toshipper Logistics for their
             door-to-door shipping needs. Start managing your logistics today.
           </p>
-          <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+          {/* <div className="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
             <Link href="/sign-up">
               <Button
                 size="lg"
@@ -674,7 +674,7 @@ export default function HomePage() {
                 Sign In
               </Button>
             </Link>
-          </div>
+          </div> */}
         </div>
       </motion.section>
 
